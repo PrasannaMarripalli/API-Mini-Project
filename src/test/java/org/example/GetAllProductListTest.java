@@ -7,23 +7,22 @@ import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public class GetAllProductListTest {
-    private static Response response ;
+    //private static Response response ;
 @Test
 @DisplayName("Test for getting all product list")
-    public void setUp(){
-    RestAssured
+    public void GetAllProducts() {
+     RestAssured
             .given()
-            .baseUri("https://automationexercise.com/api/productsList")
+            .baseUri("https://automationexercise.com/api")
+            .basePath("/productsList")
             .when()
             .get()
             .then()
             .statusCode(200);
 }
-//@Testhjh
-//    @DisplayName("Verify the status code")
-//    public void StatusCodeTest(){
-//    MatcherAssert.assertThat(response.statusCode(), Matchers.is("200"));
-//}
+
 
 }
