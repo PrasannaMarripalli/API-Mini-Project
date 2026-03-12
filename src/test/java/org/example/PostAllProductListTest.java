@@ -14,15 +14,13 @@ import static org.hamcrest.Matchers.is;
 public class PostAllProductListTest {
 private static Response response;
     @BeforeAll
-    public static void setup(){
-    response =  RestAssured
+    public static void setup() {
+        response = RestAssured
                 .given()
                 //.baseUri(
                 .when()
                 .post("https://automationexercise.com/api/productsList")
                 .thenReturn();
-                //.statusCode(200);
-        //.body("message", equalTo("<{responseCode: 405, message: This request method is not supported.}>"));
     }
    @Test
     @DisplayName("Test the error code ")
@@ -30,10 +28,5 @@ private static Response response;
         MatcherAssert.assertThat(response.getBody().asString(), Matchers.containsString("405"));
     }
 
-//        @Test
-//    @DisplayName("Test the error code ")
-//    public void dummy(){
-//        MatcherAssert.assertThat(true, is(true));
-//    }
 
 }
