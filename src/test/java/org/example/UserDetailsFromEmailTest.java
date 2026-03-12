@@ -29,8 +29,8 @@ public class UserDetailsFromEmailTest {
     }
 
     @Test
-    @DisplayName("Correct postcode returned in result")
-    public void testPostcode() {
+    @DisplayName("Correct user details returned in result")
+    public void UserDetailTest() {
         assertThat(response.jsonPath().getString("user.first_name"), Matchers.is("Seb"));
         assertThat(response.jsonPath().getString("user.last_name"), Matchers.is("Jennings"));
         assertThat(response.jsonPath().getString("user.address1"), Matchers.is("1 Main street"));
